@@ -16,5 +16,7 @@ angular.module("prototipo").config(function($routeProvider){ //Configurando o co
     });
     
     $routeProvider.otherwise({redirectTo: "/home"});
-
+	$routeProvider.when("/cadastro",
+	{ templateUrl: "Angular/view_cadastro.html"
+});
 });

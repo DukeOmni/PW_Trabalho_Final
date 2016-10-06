@@ -10,5 +10,11 @@ angular.module("prototipo").config(function($routeProvider){ //Configurando o co
         templateUrl: "Angular/testeView.html"
     });
 
+    $routeProvider.when("/RelatorioDeVenda",
+    {
+        templateUrl: "Angular/relatorio_de_vendaView.html"
+    });
+    
     $routeProvider.otherwise({redirectTo: "/home"});
+
 });

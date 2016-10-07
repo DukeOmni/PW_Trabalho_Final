@@ -1,18 +1,71 @@
 <div ng-init = "veiculos = [{veiculo: 'carro1', vendedor: 'vendedor1', cliente: 'cliente 1', FP: 'FP1', valor: 'valor1'},
                             {veiculo: 'carro2', vendedor: 'vendedor2', cliente: 'cliente 2', FP: 'FP2', valor: 'valor2'},    
-                            {veiculo: 'carro3', vendedor: 'vendedor3', cliente: 'cliente 3', FP: 'FP3', valor: 'valor3'}]">
+                            {veiculo: 'carro3', vendedor: 'vendedor3', cliente: 'cliente 3', FP: 'FP3', valor: 'valor3'},
+                             {veiculo: 'carro4', vendedor: 'vendedor4', cliente: 'cliente 4', FP: 'FP4', valor: 'valor5'},
+                              {veiculo: 'carro5', vendedor: 'vendedor5', cliente: 'cliente 5', FP: 'FP5', valor: 'valor4'},
+                               {veiculo: 'carro6', vendedor: 'vendedor6', cliente: 'cliente 6', FP: 'FP6', valor: 'valor6'},
+                                {veiculo: 'carro7', vendedor: 'vendedor7', cliente: 'cliente 7', FP: 'FP7', valor: 'valor7'},
+                                 {veiculo: 'carro8', vendedor: 'vendedor8', cliente: 'cliente 8', FP: 'FP8', valor: 'valor8'},
+                                  {veiculo: 'carro9', vendedor: 'vendedor9', cliente: 'cliente 9', FP: 'FP9', valor: 'valor9'},
+                                   {veiculo: 'carro10', vendedor: 'vendedor10', cliente: 'cliente 10', FP: 'FP10', valor: 'valor0'}]">
 </div>          
-
-
-<div class="col-xs-12">
-<h1 align="center"> Relatório de vendas </h1>
- </div>  
+    <div>
+        <br>
+        </div>
    <div>
     <div class="col-xs-4">
-        <label> Busca </label><input type="text" ng-model="busca">
+        <div class="panel panel-primary">
+            <div class="panel-heading"> <h4> Filtros </h4> </div>
+            <div class="panel-body">
+        <form class="form-horizontal">
+        
+        <ul class="list-group">
+
+        <li class="list-group-item">
+        <div class="form-group">
+        <label class="col-sm-4 control-label"> Veículo </label> 
+            <div class="col-sm-8">
+            <input class="form-control" type="text" ng-model="search.veiculo">
+            </div>
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        <div class="form-group">
+        <label class="col-sm-4 control-label"> Vendedor </label>
+            <div class="col-sm-8">
+        <input class="form-control" type="text" ng-model="search.vendedor"> 
+            </div>
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        <div class="form-group">
+        <label class="col-sm-4 control-label"> Cliente </label> 
+            <div class="col-sm-8">
+        <input class="form-control" type="text" ng-model="search.cliente">  
+            </div>
+        </div>
+        </li>
+
+        <li class="list-group-item">        
+        <div class="form-group">
+         <label class="col-sm-4 control-label"> Valor </label>
+            <div class="col-sm-8">
+         <input class="form-control" type="text" ng-model="search.valor"> 
+            </div>
+        </div>
+        </li>
+
+    </form>
     </div>
-    <div class="col-xs-8">
-    <table class="table table-bordered">
+    </div>
+    </div>
+    <div class="col-xs-8" scrolling="yes">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h4> Relatório</h4></div>
+    <div class="panel-body">    
+    <table class="display">
         <thead>
             <th> Veículo </th>
             <th> Vendedor </th>
@@ -21,14 +74,23 @@
             <th> Valor total </th>
         </thead>
         <tbody>
-           <tr ng-repeat = "veiculo in veiculos | filter:busca">
-               <td> {{veiculo.veiculo}} </td>
-               <td> {{veiculo.vendedor}} </td>
+           <div class="list-group">
+           <tr ng-repeat = "veiculo in veiculos | filter:search">
+              
+               <td>  <a href="#" class="list-group-item"> {{veiculo.veiculo}} </a> </td>
+               <td>  <a href="#" class="list-group-item"> {{veiculo.vendedor}} </a> </td>
                <td> {{veiculo.cliente}} </td>
                <td> {{veiculo.FP}} </td>
                <td> {{veiculo.valor}} </td>
+               
                </tr>
+            </div>
         </tbody>
     </table>
         </div>
+        </div>
+    <div align="right">
+    <a class="btn btn-primary btn-lg btn-outline btn-rounded"> Salvar... </a>
+    <a class="btn btn-primary btn-lg btn-outline btn-rounded"> Imprimir </a>
+    </div>
     </div>

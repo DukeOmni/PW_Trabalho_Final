@@ -1,5 +1,5 @@
-angular.module("prototipo", ["ngRoute"]); //Definindo o modulo prototipo
-angular.module("prototipo").config(function($routeProvider){ //Configurando o controlador de fluxo das páginas
+angular.module("prototipo", ["ngRoute"], 'ngAnimate')
+.config(function($routeProvider){ //Configurando o controlador de fluxo das páginas
     $routeProvider.when("/home",        //Ligando a referência ao html de visão
     {
         templateUrl: "view/home.html"

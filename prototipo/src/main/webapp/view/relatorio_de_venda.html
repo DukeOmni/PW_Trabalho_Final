@@ -65,7 +65,7 @@
     <div class="panel panel-primary">
     <div class="panel-heading"><h4> Relatório</h4></div>
     <div class="panel-body">    
-    <table class="display">
+    <table class="table table-striped table-bordered">
         <thead>
             <th> Veículo </th>
             <th> Vendedor </th>
@@ -77,8 +77,8 @@
            <div class="list-group">
            <tr ng-repeat = "veiculo in veiculos | filter:search">
               
-               <td>  <a href="#" class="list-group-item"> {{veiculo.veiculo}} </a> </td>
-               <td>  <a href="#" class="list-group-item"> {{veiculo.vendedor}} </a> </td>
+               <td> {{veiculo.veiculo}} </td>
+               <td> {{veiculo.vendedor}} </td>
                <td> {{veiculo.cliente}} </td>
                <td> {{veiculo.FP}} </td>
                <td> {{veiculo.valor}} </td>
@@ -90,7 +90,7 @@
         </div>
         </div>
     <div align="right">
-    <a class="btn btn-primary btn-lg btn-outline btn-rounded"> Salvar... </a>
-    <a class="btn btn-primary btn-lg btn-outline btn-rounded"> Imprimir </a>
+    <a class="btn btn-primary"> Salvar... </a>
+    <a class="btn btn-primary "> Imprimir </a>
     </div>
     </div>

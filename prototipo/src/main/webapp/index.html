@@ -1,18 +1,18 @@
 ﻿<!DOCTYPE html>
-<html ng-app="prototipo">
+<html>
 <head>
-<script src="Angular/angular.min.js"></script>
-<script src="Angular/angular-route.js"></script>
-<script src="Angular/angular-main.js"></script>
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-<script src="bootstrap/js/bootstrap.js"></script>
+
+<script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 <script src="bootstrap/js/jquery-3.1.1.min.js"></script>
 <link href="bootstrap/css/main.css" rel="stylesheet">
-<script src="bootstrap/js/jquery-datatables-min.js"></script>
-<link href="bootstrap/css/jquery-datatables-min.css" rel="stylesheet">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="Angular/app.js"></script>
+
 <title>S.R</title>
 </head>
-<body style="background:#CAE1FF">
+<body style="background:#CAE1FF" ng-app="SistemaRevenda">
 <div>
 <div class="col-xs-2">
 <div class="dashboard-page">
@@ -24,18 +24,19 @@
                         Sistema de revenda
                     </h2>
                 </div>
+                <nav role="navigation">
                 <ul class="nav nav-sidebar">
-                    <li><a href="#/home"> Home </a></li>
-                    <li><a href="#/teste"> Teste </a></li>
-                    <li><a href="#/RelatorioDeVenda"> Relatório de vendas</a></li>
-                    <li><a href="#/cadastro"> Cadastro</a></li>
+                    <li><a ui-sref="#/home"> Home </a></li>
+                    <li><a ui-sref="#/RelatorioDeVenda"> Relatório de vendas</a></li>
+                    <li><a ui-sref="#/cadastro"> Cadastro</a></li>
                 </ul>
+                </nav>
             </div>
            </div>
           </div>
          </div>
         </div>    
-<div ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" ui-view=""></div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" ui-view></div>
 </div>
 </body>
 </html>

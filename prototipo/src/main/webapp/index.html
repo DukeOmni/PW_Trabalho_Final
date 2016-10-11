@@ -2,17 +2,21 @@
 <html>
 <head>
 
-<script src="http://code.angularjs.org/1.2.13/angular.js"></script>
-<script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+<script src="Angular/angular.js"></script>
+<script src="Angular/angular-animate.js"></script>
+<script src="Angular/angular-route.js"></script>
 <script src="bootstrap/js/jquery-3.1.1.min.js"></script>
 <link href="bootstrap/css/main.css" rel="stylesheet">
 <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+<link href="Angular/less.js"></script> 
 <script src="bootstrap/js/bootstrap.js"></script>
-<script src="Angular/app.js"></script>
+<script src="Angular/angular-main.js"></script>
+<script src="controllers/relatorio_de_vendas.js"></script>
 
 <title>S.R</title>
 </head>
-<body style="background:#CAE1FF" ng-app="SistemaRevenda">
+<body style="background:#CAE1FF" ng-app="SR">
 <div>
 <div class="col-xs-2">
 <div class="dashboard-page">
@@ -26,9 +30,9 @@
                 </div>
                 <nav role="navigation">
                 <ul class="nav nav-sidebar">
-                    <li><a ui-sref="#/home"> Home </a></li>
-                    <li><a ui-sref="#/RelatorioDeVenda"> Relatório de vendas</a></li>
-                    <li><a ui-sref="#/cadastro"> Cadastro</a></li>
+                    <li><a href="#/home"> Home </a></li>
+                    <li><a href="#/RelatorioDeVenda"> Relatório de vendas</a></li>
+                    <li><a href="#/cadastro"> Cadastro</a></li>
                 </ul>
                 </nav>
             </div>
@@ -36,7 +40,7 @@
           </div>
          </div>
         </div>    
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" ui-view></div>
+<div ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" ></div>
 </div>
 </body>
 </html>

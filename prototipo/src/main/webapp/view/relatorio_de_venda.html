@@ -82,7 +82,7 @@
            <div class="list-group">
            <tr ng-repeat = "veiculo in veiculos | orderBy: myOrderBy | filter:search ">
               
-               <td data-ng-show="hideVeiculo" style="cursor: pointer" ng-click="redirect()"> {{veiculo.veiculo}} </td>
+               <td data-ng-show="hideVeiculo" style="cursor: pointer" ng-click="redirectVeiculo()"> {{veiculo.veiculo}} </td>
                <td data-ng-show="hideVendedor" style="cursor: pointer"> {{veiculo.vendedor}} </td>
                <td data-ng-show="hideCliente" style="cursor: pointer"> {{veiculo.cliente}} </td>
                <td data-ng-show="hideFP" style="cursor: pointer"> {{veiculo.FP}} </td>

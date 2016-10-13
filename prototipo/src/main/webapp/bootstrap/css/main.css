@@ -10,6 +10,8 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 }
 
 div {
+
+  transition: all linear 0.5s;
 }
 
 div.ng-hide {

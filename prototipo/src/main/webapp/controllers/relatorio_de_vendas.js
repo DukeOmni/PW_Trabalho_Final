@@ -1,34 +1,46 @@
 SR
-.controller("relatorioCtrl", function ($scope) {
-    var alturaDiv = screen.height - 100;
-    $scope.altura = alturaDiv;
+.controller("relatorioCtrl", function ($scope, $window) {
+    $scope.redirectVeiculo = function(){
+        $window.location.href = '#/informacoesVeiculo';
+    };
+    $scope.orderByMe = function(x){
+        $scope.myOrderBy = x;    
+    };
     $scope.veiculos = [{
-        veiculo: "carro1",
+        veiculo: "carro89",
         vendedor: "vendedor1",
         cliente: "cliente1",
-        FP: "FP1",
-        valor: "valor1"
+        FP: "FP14",
+        valorTotal: "valor15",
+        valorLiquido: "VL90",
+        valorImpostos: "VI1"
     },
         {
         veiculo: "carro2",
-        vendedor: "vendedor2",
-        cliente: "cliente2",
+        vendedor: "vendedor0",
+        cliente: "cliente24",
         FP: "FP2",
-        valor: "valor2"
+        valorTotal: "valor332",
+        valorLiquido: "VL1",
+        valorImpostos: "VI9"
     },
         {
         veiculo: "carro3",
-        vendedor: "vendedor4",
+        vendedor: "vendedor24",
         cliente: "cliente4",
-        FP: "FP4",
-        valor: "valor4"
+        FP: "FP422",
+        valorTotal: "valor421",
+        valorLiquido: "VL2",
+        valorImpostos: "VI22"
     },
         {
-        veiculo: "carro5",
-        vendedor: "vendedor5",
-        cliente: "cliente5",
-        FP: "FP5",
-        valor: "valor5"
+        veiculo: "carro598",
+        vendedor: "vendedor550",
+        cliente: "cliente55",
+        FP: "FP51",
+        valorTotal: "valor51",
+        valorLiquido: "VL88",
+        valorImpostos: "VI00"
     }];
 });
 

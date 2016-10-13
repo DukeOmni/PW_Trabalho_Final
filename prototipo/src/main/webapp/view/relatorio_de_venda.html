@@ -1,15 +1,30 @@
     <div>
-    <div class="col-xs-4" >
+    <div class="col-md-4" >
         <div class="panel panel-primary">
             <div class="panel-heading"> <h4> Configurar relatório </h4></div>
             <div class="panel-body">
         <form class="form-horizontal">
         <div class="form-group">
-        <label class="col-sm-4 control-label"> Buscar </label> 
-            <div class="col-sm-8">
+        <label class="col-sm-2 control-label"> Buscar </label> 
+            <div class="col-sm-10">
             <input class="form-control" type="text" ng-model="search">
             </div>
         </div>
+    <label>Classificar por <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Selecionar <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a ng-click="orderByMe('veiculo')">Veiculo</a></li>
+    <li><a ng-click="orderByMe('vendedor')">Vendedor</a></li>
+    <li><a ng-click="orderByMe('cliente')">Cliente</a></li>
+    <li><a ng-click="orderByMe('FP')">FP</a></li>
+    <li><a ng-click="orderByMe('valorTotal')">Valor Total</a></li>
+    <li><a ng-click="orderByMe('valorLiquido')">Valor Liquido</a></li>
+    <li><a ng-click="orderByMe('valorImpostos')">Valor Impostos</a></li>
+  </ul>
+</div></label>
+
         <div class="form-group">
             <div class="col-sm-12">
                 <label> <input type="checkbox" ng-model="hideVeiculo"> Veiculo </label>
@@ -17,50 +32,63 @@
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <label> <input type="checkbox" ng-model="hideVendedor"> Vendedor </label>
+                <label> <input type="checkbox" ng-model="hideVendedor" > Vendedor </label>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <label> <input type="checkbox" ng-model="hideCliente"> Veiculo </label>
+                <label> <input type="checkbox" ng-model="hideCliente" > Cliente </label>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <label> <input type="checkbox" ng-model="hideFP"> Forma de pagamento </label>
+                <label> <input type="checkbox" ng-model="hideFP" > Forma de pagamento </label>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-12">
-                <label> <input type="checkbox" ng-model="hideValor"> Valor </label>
+                <label> <input type="checkbox" ng-model="hideValor"> Valor total</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label> <input type="checkbox" ng-model="hideValorLiquido"> Valor Liquido</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <label> <input type="checkbox" ng-model="hideValorImpostos"> Valor dos Impostos</label>
             </div>
         </div>
     </form>
     </div>
     </div>
     </div>
-    <div class="col-xs-8" scrolling="yes">
+    <div class="col-md-8" scrolling="yes">
     <div class="panel panel-primary">
     <div class="panel-heading"><h4> Relatório</h4></div>
     <div class="panel-body">    
     <table class="table table-striped table-bordered">
         <thead>
-            <th ng-hide="hideVeiculo"> Veículo </th>
-            <th ng-hide="hideVendedor"> Vendedor </th>
-            <th ng-hide="hideCliente"> Cliente </th>
-            <th ng-hide="hideFP"> Forma de pagamento </th>
-            <th ng-hide="hideValor"> Valor total </th>
+            <th ng-show="hideVeiculo"> Veículo </th>
+            <th ng-show="hideVendedor"> Vendedor </th>
+            <th ng-show="hideCliente"> Cliente </th>
+            <th ng-show="hideFP"> Forma de pagamento </th>
+            <th ng-show="hideValor"> Valor total </th>
+            <th ng-show="hideValorLiquido"> Valor liquido </th>
+            <th ng-show="hideValorImpostos"> Valor impostos </th>
         </thead>
         <tbody>
            <div class="list-group">
-           <tr ng-repeat = "veiculo in veiculos | filter:search">
+           <tr ng-repeat = "veiculo in veiculos | orderBy: myOrderBy | filter:search ">
               
-               <td data-ng-hide="hideVeiculo"> {{veiculo.veiculo}} </td>
-               <td data-ng-hide="hideVendedor"> {{veiculo.vendedor}} </td>
-               <td data-ng-hide="hideCliente"> {{veiculo.cliente}} </td>
-               <td data-ng-hide="hideFP"> {{veiculo.FP}} </td>
-               <td data-ng-hide="hideValor"> {{veiculo.valor}} </td>
-               
+               <td data-ng-show="hideVeiculo" style="cursor: pointer" ng-click="redirect()"> {{veiculo.veiculo}} </td>
+               <td data-ng-show="hideVendedor" style="cursor: pointer"> {{veiculo.vendedor}} </td>
+               <td data-ng-show="hideCliente" style="cursor: pointer"> {{veiculo.cliente}} </td>
+               <td data-ng-show="hideFP" style="cursor: pointer"> {{veiculo.FP}} </td>
+               <td data-ng-show="hideValor" style="cursor: pointer"> {{veiculo.valorTotal}} </td>
+               <td data-ng-show="hideValorLiquido" style="cursor: pointer"> {{veiculo.valorLiquido}} </td>
+               <td data-ng-show="hideValorImpostos" style="cursor: pointer"> {{veiculo.valorImpostos}} </td>
                </tr>
             </div>
         </tbody>

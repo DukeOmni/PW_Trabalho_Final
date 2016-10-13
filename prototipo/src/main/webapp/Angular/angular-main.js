@@ -16,6 +16,11 @@ SR.config(function($routeProvider){ //Configurando o controlador de fluxo das p√
         templateUrl: "view/relatorio_de_venda.html",
         controller: "relatorioCtrl"
     });
+
+    $routeProvider.when("/informacoesVeiculo",
+    {
+        templateUrl: "view/informacoes_veiculo.html"
+    });
     
     $routeProvider.otherwise({redirectTo: "/home"});
 	$routeProvider.when("/cadastro",

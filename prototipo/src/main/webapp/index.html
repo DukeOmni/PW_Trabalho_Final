@@ -1,73 +1,31 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class=no-js>
+
 <head>
-<script src="Angular/angular.js"></script>
-<script src="Angular/angular-animate.js"></script>
-<script src="Angular/angular-route.js"></script>
-<script src="bootstrap/js/jquery-3.1.1.min.js"></script>
-<link href="bootstrap/css/main.css" rel="stylesheet">
-<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
- <script src="bootstrap/js/bootstrap.js"></script>
-<script src="Angular/angular-main.js"></script>
-<script src="controllers/relatorio_de_vendas.js"></script>
-<script src="controllers/cadastro.js"></script>
-<script src="controllers/cadastroUsuario.js"></script>
-<script src="controllers/cadastroVeiculo.js"></script>
-<script src="controllers/index.js"></script>
+      <meta charset=utf-8>
+      <title>Ani AngularJS Dashboard Theme</title>
+      <meta name=description>
+      <meta name=viewport content="width=device-width">
+      <link rel=stylesheet href=styles/main.css> </head>
 
-<title>S.R</title>
-</head>
-<body ng-app="SR">
-<div>
-<div class="col-xs-2">
-<div class="dashboard-page">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
-                <div class="text-center" ng-init="login = 'true'">
-                <div ng-hide="login">
-                    <img src="view/flat-avatar.png">    
-                    <div align="left"><button class="btn btn-primary">Logout</button></div>
-                </div>
-                <div class="row" ng-show="login">
-		        <div>
-			    <form role="form">
+<body ng-app=yapp>
+      <!--[if lt IE 7]>
+ <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+ <![endif]-->
+      <div>
+            <div ui-view></div>
+      </div> <script> /*
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-				<div class="form-content">
-					<div class="form-group">
-						<input type="text" class="form-control input-underline input-md" id="" placeholder="Email">
-					</div>
-
-					<div class="form-group">
-						<input type="password" class="form-control input-underline input-md" id="" placeholder="Password">
-					</div>
-				</div>
-
-				<div align="left"><button class="btn btn-primary" ng-click="login = 'false'">Login</button></div>
-
-			</form>
-
-		    </div>	
-	    </div>
-
-             <h2 class="brand">
-                        Sistema de revenda
-                    </h2>
-                </div>
-                <nav role="navigation">
-                <ul class="nav nav-sidebar">
-                    <li><a href="#/home"> Home </a></li>
-                    <li><a href="#/RelatorioDeVenda"> Relatório de vendas</a></li>
-                    <li><a href="#/cadastroUsuario"> Cadastro de usuário</a></li>
-                    <li><a href="#/cadastroVeiculo"> Cadastro de veículo</a></li>
-                </ul>
-                </nav>
-            </div>
-           </div>
-          </div>
-         </div>
-        </div>    
-<div ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2"></div>
-</div>
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview'); */
+    </script>
+      <!--[if lt IE 9]>
+ <script src="scripts/oldieshim.js"></script>
+ <![endif]--><script src=scripts/vendor.js></script> <script src=scripts/scripts.js></script>
 </body>
+
 </html>

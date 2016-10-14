@@ -1,4 +1,4 @@
-    <div>
+<div>
     <div class="col-md-4" >
         <div class="panel panel-primary">
             <div class="panel-heading"> <h4> Configurar relatório </h4></div>
@@ -10,21 +10,18 @@
             <input class="form-control" type="text" ng-model="search">
             </div>
         </div>
-    <label>Classificar por <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Selecionar <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a ng-click="orderByMe('veiculo')">Veiculo</a></li>
-    <li><a ng-click="orderByMe('vendedor')">Vendedor</a></li>
-    <li><a ng-click="orderByMe('cliente')">Cliente</a></li>
-    <li><a ng-click="orderByMe('FP')">FP</a></li>
-    <li><a ng-click="orderByMe('valorTotal')">Valor Total</a></li>
-    <li><a ng-click="orderByMe('valorLiquido')">Valor Liquido</a></li>
-    <li><a ng-click="orderByMe('valorImpostos')">Valor Impostos</a></li>
-  </ul>
-</div></label>
-
+  
+  <label> Classificar por 
+    <ul>
+    <li><a style="cursor: pointer" ng-click="orderByMe('veiculo')">Veiculo</a></li>
+    <li><a style="cursor: pointer" ng-click="orderByMe('vendedor')">Vendedor</a></li>
+    <li><a style="cursor: pointer" ng-click="orderByMe('cliente')">Cliente</a></li>
+    <li><a style="cursor: pointer" ng-click="orderByMe('FP')">FP</a></li>
+    <li><a style="cursor: pointer" ng-click="orderByMe('valorTotal')">Valor Total</a></li>
+    <li><a style="cursor: pointer" ng-click="orderByMe('valorLiquido')">Valor Liquido</a></li>
+    <li><a style="cursor: pointer" ng-click="orderByMe('valorImpostos')">Valor Impostos</a></li>
+  </ul></label>
+        <br><label> Colunas visíveis </label>
         <div class="form-group">
             <div class="col-sm-12">
                 <label> <input type="checkbox" ng-model="hideVeiculo"> Veiculo </label>
@@ -96,9 +93,10 @@
         </div>
         </div>
     <div align="right">
-    <a class="btn btn-primary"> Salvar... </a>
-    <a class="btn btn-primary "> Imprimir </a>
+    <a class="pull-right btn btn-primary btn-outline btn-rounded"> Salvar... </a>
+    <a class="pull-right btn btn-primary btn-outline btn-rounded"> Imprimir </a>
     </div>
     </div>
     </div>
+    <div> <a ui-sref=overview class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a> </div>
    

@@ -37,6 +37,13 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
                     templateUrl: "views/dashboard/reports.html",
                     controller: "reportsCtrl"
                 })
+
+                .state("cadastroVeiculo",{
+                    url: "/cadastroVeiculo",
+                    parent: "dashboard",
+                    templateUrl: "views/dashboard/cadastroVeiculo.html",
+                    controller: "cadastroVeiculoCtrl"
+                })
     }]),
 
     angular.module("yapp")
@@ -62,9 +69,6 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
     }]),
 
     angular.module("yapp").controller("reportsCtrl", function ($scope, $window) {
-        $scope.redirectVeiculo = function () {
-            $window.location.href = '#/informacoesVeiculo';
-        };
         $scope.orderByMe = function (x) {
             $scope.myOrderBy = x;
         };
@@ -104,4 +108,7 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
                 valorLiquido: "VL88",
                 valorImpostos: "VI00"
             }];
+    }),
+    angular.module("yapp").controller("cadastroVeiculoCtrl",function($scope){
+
     });

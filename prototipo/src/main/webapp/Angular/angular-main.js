@@ -1,14 +1,9 @@
-var SR = angular.module("SR",["ngRoute","ngAnimate"]);
+var SR = angular.module("SR",["ngRoute"]);
 
 SR.config(function($routeProvider){ //Configurando o controlador de fluxo das páginas
     $routeProvider.when("/home",        //Ligando a referência ao html de visão
     {
         templateUrl: "view/home.html"
-    });
-
-    $routeProvider.when("/teste",
-    {
-        templateUrl: "view/teste.html"
     });
 
     $routeProvider.when("/RelatorioDeVenda",
@@ -22,9 +17,21 @@ SR.config(function($routeProvider){ //Configurando o controlador de fluxo das p�
         templateUrl: "view/informacoes_veiculo.html"
     });
     
-    $routeProvider.otherwise({redirectTo: "/home"});
-	$routeProvider.when("/cadastro",
-	{ templateUrl: "view/cadastro.html"
+    $routeProvider.otherwise({redirectTo: "/dash"});
+	
+    $routeProvider.when("/cadastroUsuario",
+	{ templateUrl: "view/cadastroUsuario.html",
+      controller: "cadastroUsuarioCtrl"
+});
+    $routeProvider.when("/cadastroVeiculo",
+	{ templateUrl: "view/cadastroVeiculo.html",
+      controller: "cadastroVeiculoCtrl"
+});
+     $routeProvider.when("/login",
+	{ templateUrl: "view/login.html"
+});
+     $routeProvider.when("/dash",
+	{ templateUrl: "view/index.html"
 });
 
 });

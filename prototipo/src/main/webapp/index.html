@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
 <script src="Angular/angular.js"></script>
 <script src="Angular/angular-animate.js"></script>
 <script src="Angular/angular-route.js"></script>
@@ -11,18 +10,47 @@
  <script src="bootstrap/js/bootstrap.js"></script>
 <script src="Angular/angular-main.js"></script>
 <script src="controllers/relatorio_de_vendas.js"></script>
+<script src="controllers/cadastro.js"></script>
+<script src="controllers/cadastroUsuario.js"></script>
+<script src="controllers/cadastroVeiculo.js"></script>
+<script src="controllers/index.js"></script>
 
 <title>S.R</title>
 </head>
-<body style="background:#CAE1FF" ng-app="SR">
+<body ng-app="SR">
 <div>
 <div class="col-xs-2">
 <div class="dashboard-page">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
-                <div class="text-center">
-                    <h2 class="brand">
+                <div class="text-center" ng-init="login = 'true'">
+                <div ng-hide="login">
+                    <img src="view/flat-avatar.png">    
+                    <div align="left"><button class="btn btn-primary">Logout</button></div>
+                </div>
+                <div class="row" ng-show="login">
+		        <div>
+			    <form role="form">
+
+				<div class="form-content">
+					<div class="form-group">
+						<input type="text" class="form-control input-underline input-md" id="" placeholder="Email">
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control input-underline input-md" id="" placeholder="Password">
+					</div>
+				</div>
+
+				<div align="left"><button class="btn btn-primary" ng-click="login = 'false'">Login</button></div>
+
+			</form>
+
+		    </div>	
+	    </div>
+
+             <h2 class="brand">
                         Sistema de revenda
                     </h2>
                 </div>
@@ -30,7 +58,8 @@
                 <ul class="nav nav-sidebar">
                     <li><a href="#/home"> Home </a></li>
                     <li><a href="#/RelatorioDeVenda"> Relatório de vendas</a></li>
-                    <li><a href="#/cadastro"> Cadastro</a></li>
+                    <li><a href="#/cadastroUsuario"> Cadastro de usuário</a></li>
+                    <li><a href="#/cadastroVeiculo"> Cadastro de veículo</a></li>
                 </ul>
                 </nav>
             </div>
@@ -38,7 +67,7 @@
           </div>
          </div>
         </div>    
-<div ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" ></div>
+<div ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2"></div>
 </div>
 </body>
 </html>

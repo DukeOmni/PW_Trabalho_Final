@@ -28,7 +28,8 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
                 .state("overview", {
                     url: "/overview",
                     parent: "dashboard",
-                    templateUrl: "views/dashboard/overview.html"
+                    templateUrl: "views/dashboard/overview.html",
+                    controller: "overviewCtrl"
                 })
 
                 .state("reports", {
@@ -38,7 +39,7 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
                     controller: "reportsCtrl"
                 })
 
-                .state("cadastroVeiculo",{
+                .state("cadastroVeiculo", {
                     url: "/cadastroVeiculo",
                     parent: "dashboard",
                     templateUrl: "views/dashboard/cadastroVeiculo.html",
@@ -51,17 +52,17 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
             r.submit = function () {
                 return t.path("/dashboard"), !1
             }
-            r.test = function() {
-               var view = document.getElementById("cadastro").hidden;
-               if(view){
-                  document.getElementById("cadastro").hidden = false;
-                  document.getElementById("login").hidden = true;
-                   }else if(view == false){
-                       document.getElementById("cadastro").hidden = true;
-                       document.getElementById("login").hidden = false;
-                   }
+            r.test = function () {
+                var view = document.getElementById("cadastro").hidden;
+                if (view) {
+                    document.getElementById("cadastro").hidden = false;
+                    document.getElementById("login").hidden = true;
+                } else if (view == false) {
+                    document.getElementById("cadastro").hidden = true;
+                    document.getElementById("login").hidden = false;
                 }
             }
+        }
         ]),
 
     angular.module("yapp").controller("DashboardCtrl", ["$scope", "$state", function (r, t) {
@@ -109,6 +110,17 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
                 valorImpostos: "VI00"
             }];
     }),
-    angular.module("yapp").controller("cadastroVeiculoCtrl",function($scope){
 
-    });
+    angular.module("yapp").controller("overviewCtrl", ["$scope", "$location", function (r, t) {
+        r.cadastroVeiculo = function () {
+            var view = document.getElementById("cadastroVeiculo").hidden;
+            if (view) {
+                document.getElementById("cadastroVeiculo").hidden = false;
+                document.getElementById("botao").hidden = true;
+            } else if (view == false) {
+                document.getElementById("cadastroVeiculo").hidden = true;
+                document.getElementById("botao").hidden = false;
+            }
+        }
+    }
+    ]);

@@ -111,16 +111,27 @@ angular.module("yapp", ["ui.router", "ngAnimate"]).
             }];
     }),
 
-    angular.module("yapp").controller("overviewCtrl", ["$scope", "$location", function (r, t) {
+    angular.module("yapp").controller("overviewCtrl", ["$scope", "$location", "$http", function (r, t, $scope) {
         r.cadastroVeiculo = function () {
             var view = document.getElementById("cadastroVeiculo").hidden;
             if (view) {
                 document.getElementById("cadastroVeiculo").hidden = false;
-                document.getElementById("botao").hidden = true;
+                document.getElementById("botao").hidden = true; 
             } else if (view == false) {
                 document.getElementById("cadastroVeiculo").hidden = true;
                 document.getElementById("botao").hidden = false;
+                var carro = {
+                nome : document.getElementById("nome").value,
+                codigo: document.getElementById("codigo").value,
+                placa: document.getElementById("carro").value,
+                valor: document.getElementById("placa").value,
+                servico : document.getElementById("servico").value,
+                data : document.getElementById("data").value
+            }
+            alert(carro.nome);
+
             }
         }
+
     }
     ]);
